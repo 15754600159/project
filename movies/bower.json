@@ -1,0 +1,25 @@
+{
+  "name": "imooc",
+  "authors": [
+    "shengxia <15754600159@163.com>"
+  ],
+  "description": "movie program",
+  "main": "",
+  "keywords": [
+    "movie"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "boostrap#^3.3.7"
+  }
+}

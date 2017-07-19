@@ -1,0 +1,34 @@
+1.CSS3：
+a. perspective：（子元素3D视图位置设置）
+浏览器支持
+目前浏览器都不支持 perspective 属性。
+Chrome 和 Safari 支持替代的 -webkit-perspective 属性。
+定义和用法
+perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+注释：perspective 属性只影响 3D 转换元素。
+
+b. transform-style: preserve-3d;（子元素3D支持）
+preserve-3d表示所有子元素在3D空间中呈现
+
+c. backface-visibility: hidden;
+反面隐藏
+
+d. transform-origin：left top;
+旋转平移变换的参考点
+
+
+
+
+分析思路：
+1.模块分析
+2.VCD分析
+
+
+前端脚本技巧
+1.字符串替换的简易模板功能  {{ }} replace()函数
+2.根据范围获取随机数的函数
+3.使用脚本切换元素的className以及具体的style
+4.兼容：photo.style['transform'] = photo.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg) scale(0.9)';
+
+

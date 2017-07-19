@@ -1,0 +1,189 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #fff;
+	color: #555;
+	font-family: 'Avenir Next', 'Lantinghei SC';
+	font-size: 14px;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+}
+
+.wrap{
+	width: 100%;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	margin-top: -300px;
+	background-color: #ddd;
+	background: url('picture/dianshang.jpg');
+	background-size: cover;
+	overflow: hidden;
+
+	/*支持3D旋转*/
+	perspective: 800px;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+}
+
+/*海报样式*/
+.photo{
+	width: 260px;
+	height: 320px;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0 0 1px rgba(0, 0, 0, .01);
+
+	transition: all 0.6s;
+
+	/*照片切换的时候改善视觉效果,从中间向外有过渡*/
+	left: 50%;
+	top: 50%;
+	margin: -160px 0 0 -130px;
+}
+.photo .side{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+/*.photo .side-front{display: none}*/
+.photo .side-front .image{
+	width: 100%;
+	height: 250px;
+	/*照片小于250px时会垂直居中*/
+	line-height: 250px;
+	overflow: hidden;
+}
+.photo .side-front .image img{
+	width: 100%;
+}
+.photo .side-front .caption{
+	text-align: center;
+	font-size: 16px;
+	line-height: 50px;
+}
+
+.photo .side-back{}
+.photo .side-back .desc{
+	color: #666;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+/*当前选中的海报样式*/
+.photo-center{
+	left: 50%;
+	top: 50%;
+	margin: -160px 0 0 -130px;
+	z-index: 999;
+}
+
+/*负责翻转（反面隐藏）*/
+.photo-wrap{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transition: all 0.6s;
+}
+.photo-wrap .side-front{
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+}
+.photo-wrap .side-back{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.photo-wrap .side{
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+}
+
+.photo-front .photo-wrap{
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+}
+.photo-back .photo-wrap{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
+/*控制按钮的样式*/
+.nav{
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	left: 10%;
+	bottom: 20px;
+	z-index: 999;
+	/*background-color: #fff;*/
+	text-align: center;
+}
+/*普通样式*/
+.nav .i{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	cursor: pointer;
+	background-color: #ffaaaa;
+	text-align: center;
+	border-radius: 50%;
+	transform: scale(0.48);
+	-webkit-transform: scale(0.48);
+	-moz-transform: scale(0.48);
+	transition: all 0.6s;
+}
+/*选中样式*/
+.nav .i-current{
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	background-color: #ffaa00;
+}
+/*背面样式*/
+.nav .i-back{
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	background-color: #bfff3f;
+}
+
+
+/*翻转特效，模拟人类有个向右平移*/
+.photo-wrap{
+	/*照片的左边的边为变化定点 webkit-transform-origin：left top;*/
+	transform-origin: 0% 50%;
+	-webkit-transform-origin: 0% 50%;
+	-moz-transform-origin: 0% 50%;
+}
+.photo-front .photo-wrap{
+	/*这里需在定义旋转角度，不然会被覆盖*/
+	transform: translate(0px, 0px) rotateY(0deg);
+	-webkit-transform: translate(0px, 0px) rotateY(0deg);
+	-moz-transform: translate(0px, 0px) rotateY(0deg);
+}
+.photo-back .photo-wrap{
+	/*这里需在定义旋转角度，不然会被覆盖*/
+	/*260px刚好是照片宽度，左边 翻转后变 右边*/
+	transform: translate(260px, 0px) rotateY(180deg);
+	-webkit-transform: translate(260px, 0px) rotateY(180deg);
+	-moz-transform: translate(260px, 0px) rotateY(180deg);
+}

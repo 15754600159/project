@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fly bird</title>
+    <link href="bird.css" rel="stylesheet" type="text/css">
+    <script src="bird.js"></script>
+</head>
+<body>
+
+    <div id="warp">
+        <!--开始菜单-->
+        <div id="menuGame">
+            <!--字-->
+            <img src="img/head.jpg" />
+            <!--鸟-->
+            <img src="img/bird.png" />
+            <!--开始按钮-->
+            <img src="img/start.jpg" id="start" />
+        </div>
+        <!--重新开始按钮-->
+        <button id="restart" style="display: none; z-index: 3">
+            <img src="img/restart.jpg" />
+        </button>
+        <!--游戏内容-->
+        <div id="content">
+            <!--飞鸟-->
+            <img src="img/bird.png" id="bird" />
+            <!--分数-->
+            <div id="score">
+                <img src="img/0.jpg" />
+            </div>
+            <!--管道-->
+            <ul id="pipes">
+                <!--<li class="pipe">-->
+                    <!--&lt;!&ndash;上管道&ndash;&gt;-->
+                    <!--<div class="up_pipe"></div>-->
+                    <!--&lt;!&ndash;下管道&ndash;&gt;-->
+                    <!--<div class="down_pipe"></div>-->
+                <!--</li>-->
+            </ul>
+            <!--草地-->
+            <div id="grass">
+                <img src="img/bg.jpg" />
+                <img src="img/bg.jpg" />
+            </div>
+            <!--结束界面-->
+            <div id="menuOver">
+                <img src="img/message.jpg">
+                <span id="nowScore">0</span>
+                <span id="bestScore">0</span>
+            </div>
+        </div>
+        <!--音乐-->
+        <!--背景音乐-->
+        <audio src="music/game_music.mp3" id="musicGame"></audio>
+        <!--点击音乐-->
+        <audio src="music/bullet.mp3" id="musicBullet"></audio>
+        <!--结束音乐-->
+        <audio src="music/game_over.mp3" id="musicOver"></audio>
+    </div>
+
+</body>
+</html>

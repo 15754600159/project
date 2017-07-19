@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding:0;
+}
+#warp{
+    width:343px;
+    height: 480px;
+    margin: 20px auto;
+    background:url("img/bg.jpg");
+    position:relative;
+    overflow: hidden;
+}
+#menuGame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#menuGame img:first-child{
+    position: absolute;
+    top: 100px;
+    left:55px;
+    z-index: 1;
+}
+#menuGame img:nth-child(2){
+    position: absolute;
+    top:125px;
+    right:55px;
+    animation: fly 1s linear infinite;
+    z-index: 1;
+}
+@keyframes fly {
+    0%{
+        top: 125px;
+    }
+    25%{
+        top: 105px;
+    }
+    75%{
+        top: 145px;
+    }
+    100%{
+        top:125px;
+    }
+}
+#start{
+    position: absolute;
+    top:240px;
+    left:50%;
+    margin-left: -50px;
+    z-index:1;
+    cursor: pointer;
+}
+#restart{
+    position: absolute;
+    top:280px;
+    left:50%;
+    margin-left: -50px;
+    z-index:1;
+    cursor: pointer;
+    width: 85px;
+    height: 29px;
+    border: 0px;
+}
+#content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#bird{
+    position: absolute;
+    top:40%;
+    left:60px;
+    display: none;
+    z-index: 1;
+}
+#score{
+    position: absolute;
+    left:50%;
+    margin-left:-10px;
+    display:none;
+    z-index: 3;
+}
+#pipes{
+    height:423px;
+    list-style-type:none;
+    /*z-index: 2;*/
+}
+.pipe{
+    width:60px;
+    height:423px;
+    position: absolute;
+    z-index: 2;
+}
+.up_pipe{
+    width:62px;
+    background: url("img/up_pipe.png") bottom no-repeat, url("img/up_mod.png") repeat-y;
+    position: absolute;
+    top:0;
+}
+.down_pipe{
+    width:62px;
+    background: url("img/down_pipe.png") top no-repeat, url("img/down_mod.png") repeat-y;
+    position: absolute;
+    bottom:40px;
+}
+#grass{
+    width:1000px;
+    position: absolute;
+    left:0;
+    bottom: 43px;
+}
+#grass > img{
+    width:343px;
+    float:left;
+}
+#menuOver{
+    position: absolute;
+    top:110px;
+    left:35px;
+    display:none;
+}
+#nowScore{
+    position: absolute;
+    right:50px;
+    top:38px;
+}
+#bestScore{
+    position: absolute;
+    right:50px;
+    top:90px;
+}
